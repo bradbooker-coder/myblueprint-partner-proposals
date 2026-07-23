@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Partner Proposal Template — myBlueprint</title>
+<meta name="description" content="Partner proposal landing page template." />
+
+<!-- ============================================================
+     HOW TO REUSE THIS TEMPLATE FOR A NEW PARTNER
+     Almost everything you'd want to change lives in config.js —
+     edit that file, not this one. This file only needs touching
+     if you want to change the actual page structure or layout.
+     ============================================================ -->
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          'mb-navy': 'rgb(var(--mb-navy-rgb) / <alpha-value>)',
+          'mb-blue': 'rgb(var(--mb-blue-rgb) / <alpha-value>)',
+          'mb-light-blue': 'rgb(var(--mb-light-blue-rgb) / <alpha-value>)',
+          'off-white': 'rgb(var(--mb-off-white-rgb) / <alpha-value>)',
+          'text-secondary': 'var(--text-secondary)',
+          'text-muted': 'var(--text-muted)',
+          'border-light': 'var(--border-light)',
+          'neutral-1': 'rgb(var(--neutral-1-rgb) / <alpha-value>)',
+          'neutral-2': 'rgb(var(--neutral-2-rgb) / <alpha-value>)',
+          'neutral-3': 'rgb(var(--neutral-3-rgb) / <alpha-value>)',
+          'neutral-4': 'rgb(var(--neutral-4-rgb) / <alpha-value>)',
+          'neutral-5': 'rgb(var(--neutral-5-rgb) / <alpha-value>)',
+          'neutral-6': 'rgb(var(--neutral-6-rgb) / <alpha-value>)',
+        },
+        fontSize: {
+          'h1': ['3rem', { lineHeight: '1.15' }],
+          'h1-lg': ['4rem', { lineHeight: '1.15' }],
+          'h2': ['1.875rem', { lineHeight: '1.2' }],
+          'h2-lg': ['2.5rem', { lineHeight: '1.15' }],
+          'h3': ['1.375rem', { lineHeight: '1.3' }],
+          'h4': ['1.125rem', { lineHeight: '1.4' }],
+          'subheader': ['1.125rem', { lineHeight: '1.45' }],
+          'body-1': ['1.125rem', { lineHeight: '1.6' }],
+          'body-2': ['1rem', { lineHeight: '1.7' }],
+          'compact': ['0.875rem', { lineHeight: '1.4' }],
+          'subtitle-1': ['0.75rem', { lineHeight: '1.4' }],
+          'subtitle-2': ['0.625rem', { lineHeight: '1.3' }],
+        },
+      },
+    },
+  };
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="antialiased text-mb-navy">
+
+<!-- STICKY NAV (built from CONFIG.sections) -->
+<nav id="site-nav" class="fixed top-0 left-0 right-0 z-50 bg-mb-navy/95 backdrop-blur-sm border-b border-white/10 hidden md:block">
+  <div class="mx-auto max-w-5xl px-6 h-14 flex items-center justify-between">
+    <span class="text-white/70 text-compact font-semibold" id="nav-partner-name"></span>
+    <div id="nav-links" class="flex items-center gap-6 text-subtitle-1 font-medium text-white/50"></div>
+  </div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section id="hero" class="hero-gradient relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image:linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);background-size:60px 60px"></div>
+    <div class="relative z-10 mx-auto max-w-5xl px-6 pt-24 pb-20 md:pt-28 md:pb-28 lg:pb-32">
+
+      <div class="reveal flex items-center justify-center gap-4 md:gap-6 mb-12">
+        <div class="flex-1 flex justify-end">
+          <a id="hero-mb-logo-link" href="https://myblueprint.ca/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-2xl p-4 md:p-5 inline-flex items-center shadow-sm">
+            <img id="hero-mb-logo" alt="myBlueprint" class="h-10 md:h-12 w-auto" />
+          </a>
+        </div>
+        <span class="text-white/40 text-xl font-light shrink-0">×</span>
+        <div class="flex-1 flex justify-start">
+          <div class="bg-white rounded-2xl p-4 md:p-5 inline-flex items-center shadow-sm">
+            <img id="hero-partner-logo" alt="Partner" class="h-10 md:h-12 w-auto" />
+          </div>
+        </div>
+      </div>
+
+      <p id="hero-label" class="reveal text-center text-subtitle-1 tracking-[0.2em] uppercase text-mb-blue/80 font-semibold mb-6"></p>
+      <h1 id="hero-headline" class="reveal font-display text-center text-h1 md:text-h1-lg font-black text-white tracking-tight max-w-3xl mx-auto mb-5"></h1>
+      <p id="hero-subheadline" class="reveal text-center text-body-1 text-white/60 max-w-2xl mx-auto mb-10"></p>
+
+      <div class="reveal mx-auto w-12 h-[2px] bg-mb-blue/50 mb-10"></div>
+
+      <div id="hero-stats" class="reveal flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-0 sm:divide-x sm:divide-white/15"></div>
+    </div>
+  </section>
+
+  <!-- OPPORTUNITY -->
+  <section id="opportunity" class="bg-off-white pt-24 md:pt-28 pb-20 md:pb-28">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="grid md:grid-cols-[1fr,380px] gap-12 md:gap-16 items-start">
+        <div>
+          <h2 id="opp-heading" class="reveal font-display text-h2 md:text-h2-lg font-black text-mb-navy leading-tight mb-8"></h2>
+          <div id="opp-paragraphs" class="space-y-5"></div>
+        </div>
+        <div class="reveal reveal-x">
+          <div class="bg-white rounded-2xl p-8 border-l-4 border-mb-blue">
+            <p id="opp-callout-label" class="text-subtitle-1 text-mb-blue font-semibold uppercase tracking-wide mb-6"></p>
+            <div id="opp-callout-stats"></div>
+            <p id="opp-callout-sources" class="text-compact text-text-muted leading-relaxed"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       THE PACKAGE — combined overview + recommendation
+       ============================================================ -->
+  <section id="package" class="bg-white pt-24 md:pt-28 pb-20 md:pb-28">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="reveal text-center mb-10">
+        <p id="pkg-eyebrow" class="text-subtitle-1 tracking-[0.15em] uppercase text-mb-blue font-semibold mb-3"></p>
+        <h2 id="pkg-heading" class="font-display text-h2 md:text-h2-lg font-black text-mb-navy mb-4"></h2>
+        <p id="pkg-subheading" class="text-body-2 text-text-secondary max-w-2xl mx-auto"></p>
+      </div>
+
+      <p id="pkg-intro" class="reveal text-body-2 text-text-secondary max-w-3xl mx-auto text-center mb-12"></p>
+
+      <div id="pkg-tiles" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14"></div>
+
+      <div class="reveal grid md:grid-cols-[1fr,1fr] gap-10 bg-off-white rounded-3xl p-8 md:p-10">
+        <div>
+          <h3 class="text-h4 font-display font-black text-mb-navy mb-4">Why This Package</h3>
+          <ul id="pkg-reasons" class="space-y-3"></ul>
+        </div>
+        <div class="bg-mb-navy rounded-xl p-5 h-fit">
+          <div class="flex items-start gap-3">
+            <div class="mt-0.5 p-2 bg-white/10 rounded-lg shrink-0">
+              <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            </div>
+            <div>
+              <p id="pkg-engagement-title" class="font-semibold text-white text-compact mb-1"></p>
+              <p id="pkg-engagement-desc" class="text-white/70 text-compact leading-relaxed"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PRICING — flat package, incentive tier + scope selector
+       ============================================================ -->
+  <section id="pricing" class="bg-off-white pt-24 md:pt-28 pb-28 md:pb-28 lg:pb-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="reveal text-center mb-12">
+        <p id="price-eyebrow" class="text-subtitle-1 tracking-[0.15em] uppercase text-mb-blue font-semibold mb-3"></p>
+        <h2 id="price-heading" class="font-display text-h2 md:text-h2-lg font-black text-mb-navy mb-4"></h2>
+        <p id="price-desc" class="text-body-2 text-text-secondary max-w-2xl mx-auto"></p>
+      </div>
+
+      <div class="grid lg:grid-cols-[1fr,340px] gap-8 items-start">
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-h4 font-display font-black text-mb-navy mb-4">Incentive Tier</h3>
+            <div id="pricing-options" class="grid sm:grid-cols-2 gap-4"></div>
+          </div>
+
+          <div>
+            <h3 class="text-h4 font-display font-black text-mb-navy mb-1" id="scope-label"></h3>
+            <p id="scope-note" class="text-compact text-text-muted mb-4"></p>
+            <div id="scope-buttons" class="flex gap-3 mb-4"></div>
+            <div id="scope-provinces" class="grid grid-cols-2 sm:grid-cols-3 gap-2 hidden"></div>
+          </div>
+        </div>
+
+        <!-- desktop summary -->
+        <div class="hidden lg:block">
+          <div class="bg-mb-navy rounded-2xl p-6 md:p-8 text-white sticky top-20">
+            <h3 class="text-subtitle-1 font-semibold uppercase tracking-wider text-white/50 mb-5">Your Package</h3>
+            <div id="summary-lines" class="space-y-3 mb-6"></div>
+            <div class="border-t border-white/10 pt-4">
+              <div class="flex items-baseline justify-between">
+                <span class="text-compact text-white/60">Total Investment</span>
+                <span id="summary-total" class="text-2xl font-bold tabular-nums" aria-live="polite"></span>
+              </div>
+              <p id="summary-scope-note" class="text-subtitle-1 text-white/40 mt-2"></p>
+            </div>
+            <a id="summary-cta" href="#" target="_blank" rel="noopener noreferrer" class="mt-6 block w-full bg-mb-blue hover:bg-[var(--mb-blue-hover)] text-white font-semibold text-compact py-3 rounded-xl transition-colors text-center">Schedule a Conversation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- mobile sticky total bar -->
+    <div class="lg:hidden fixed bottom-0 left-0 right-0 z-40 p-3">
+      <div class="bg-mb-navy rounded-2xl px-5 py-3.5 flex items-center justify-between gap-4 text-white shadow-lg">
+        <div class="flex items-baseline gap-2">
+          <span class="text-subtitle-1 text-white/50 uppercase tracking-wider font-semibold">Total</span>
+          <span id="mobile-total" class="text-lg font-bold tabular-nums" aria-live="polite"></span>
+        </div>
+        <a id="mobile-cta" href="#" target="_blank" rel="noopener noreferrer" class="bg-mb-blue hover:bg-[var(--mb-blue-hover)] text-white font-semibold text-compact py-2.5 px-5 rounded-xl transition-colors whitespace-nowrap">Schedule a Conversation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="hero-gradient pt-24 md:pt-28 pb-20 md:pb-28 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.02]" style="background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0);background-size:32px 32px"></div>
+    <div class="relative z-10 mx-auto max-w-5xl px-6">
+      <div class="reveal text-center mb-12">
+        <p id="about-eyebrow" class="text-subtitle-1 tracking-[0.15em] uppercase text-mb-blue/70 font-semibold mb-3"></p>
+        <h2 id="about-heading" class="font-display text-h2 md:text-h2-lg font-black text-white mb-6"></h2>
+        <p id="about-desc" class="text-white/60 text-body-1 max-w-2xl mx-auto leading-relaxed whitespace-pre-line"></p>
+        <a id="about-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 text-mb-blue hover:text-mb-blue/80 text-compact font-medium transition-colors">Learn more →</a>
+      </div>
+      <div id="about-stats" class="grid sm:grid-cols-3 gap-4 md:gap-6"></div>
+    </div>
+  </section>
+
+  <!-- NEXT STEPS -->
+  <section id="next-steps" class="bg-white pt-24 md:pt-28 pb-24 md:pb-28">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <div class="reveal">
+        <h2 id="next-heading" class="font-display text-h2 md:text-h2-lg font-black text-mb-navy mb-4"></h2>
+        <p id="next-desc" class="text-body-1 text-text-secondary max-w-xl mx-auto mb-10 leading-relaxed"></p>
+      </div>
+      <div class="reveal bg-off-white rounded-2xl border border-border-light p-8 md:p-10 inline-block w-full max-w-md">
+        <div class="mb-6">
+          <p id="contact-name" class="text-h4 font-display font-black text-mb-navy"></p>
+          <p id="contact-title" class="text-compact text-text-secondary"></p>
+        </div>
+        <div class="space-y-3 mb-8">
+          <a id="contact-email" href="#" class="flex items-center justify-center gap-2 text-mb-blue hover:text-[var(--mb-blue-hover)] transition-colors text-compact">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            <span id="contact-email-text"></span>
+          </a>
+        </div>
+        <a id="contact-cta" href="#" target="_blank" rel="noopener noreferrer" class="block w-full bg-mb-blue hover:bg-[var(--mb-blue-hover)] text-white font-semibold py-3.5 rounded-xl transition-colors text-center">Schedule a Conversation</a>
+      </div>
+      <p id="next-footer" class="text-subtitle-1 text-text-muted mt-12"></p>
+    </div>
+  </section>
+
+</main>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

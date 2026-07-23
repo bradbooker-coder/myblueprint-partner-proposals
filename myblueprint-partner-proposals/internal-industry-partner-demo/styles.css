@@ -1,0 +1,121 @@
+/* ================================================================
+   myBlueprint Partner Proposal — brand tokens
+   Values pulled directly from the myBlueprint Brand Style Guide.
+   ================================================================ */
+:root {
+  /* --- Brand colours (from style guide) --- */
+  --mb-navy: #22224C;
+  --mb-blue: #0092FF;
+  --mb-blue-hover: #0077D6;
+  --mb-light-blue: #C6E7FF;
+  --mb-off-white: #F6F6FF;
+
+  --neutral-1: #E5E9F1;
+  --neutral-2: #D9DFEA;
+  --neutral-3: #AAB7CB;
+  --neutral-4: #65738B;
+  --neutral-5: #485163;
+  --neutral-6: #252A33;
+
+  /* --- Same colours as space-separated RGB channels ---
+     Tailwind's `/NN` opacity modifiers (e.g. text-mb-blue/80) only
+     work when a color is defined as rgb(R G B / <alpha-value>) —
+     a plain hex custom property silently breaks the modifier and
+     falls back to a solid, wrong-looking color. These feed the
+     tailwind.config color definitions in index.html. --- */
+  --mb-navy-rgb: 34 34 76;
+  --mb-blue-rgb: 0 146 255;
+  --mb-light-blue-rgb: 198 231 255;
+  --mb-off-white-rgb: 246 246 255;
+  --neutral-1-rgb: 229 233 241;
+  --neutral-2-rgb: 217 223 234;
+  --neutral-3-rgb: 170 183 203;
+  --neutral-4-rgb: 101 115 139;
+  --neutral-5-rgb: 72 81 99;
+  --neutral-6-rgb: 37 42 51;
+
+  /* --- Semantic aliases used throughout the markup --- */
+  --text-secondary: var(--neutral-5);
+  --text-muted: var(--neutral-4);
+  --border-light: var(--neutral-2);
+}
+
+/* ----------------------------------------------------------------
+   Typography
+   Museo Sans is myBlueprint's primary display font per the style
+   guide. It's a licensed font (not on Google Fonts) — if you have
+   the webfont files, add an @font-face block here and swap the
+   font-family stack below. Until then this falls back to Poppins,
+   a free geometric sans with a similar rounded, bold character.
+   Open Sans (secondary/body font in the guide) loads from Google
+   Fonts and is used as-is.
+   ---------------------------------------------------------------- */
+* { font-family: 'Open Sans', system-ui, sans-serif; }
+h1, h2, h3, h4, .font-display {
+  font-family: 'Museo Sans', 'Poppins', system-ui, sans-serif;
+}
+
+body { background: #fff; }
+
+.hero-gradient {
+  background: linear-gradient(160deg, var(--mb-navy) 0%, #2c2c63 55%, var(--mb-navy) 100%);
+}
+
+/* ----------------------------------------------------------------
+   Scroll reveal
+   ---------------------------------------------------------------- */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.reveal-x { transform: translateX(20px); }
+.reveal.reveal-sm { transform: translateY(12px); }
+.reveal.in-view { opacity: 1; transform: translateY(0) translateX(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal.in-view { transition: none; transform: none; opacity: 1; }
+}
+
+/* ----------------------------------------------------------------
+   Controls
+   ---------------------------------------------------------------- */
+.checkbox-box {
+  width: 20px; height: 20px; border-radius: 4px; border: 2px solid var(--border-light);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all .15s ease;
+}
+
+.option-card {
+  border: 2px solid var(--border-light);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: border-color .15s ease, background-color .15s ease;
+}
+.option-card.selected {
+  border-color: var(--mb-blue);
+  background: var(--mb-light-blue);
+}
+
+.scope-btn {
+  border: 2px solid var(--border-light);
+  cursor: pointer;
+  transition: border-color .15s ease, background-color .15s ease, color .15s ease;
+}
+.scope-btn.selected {
+  border-color: var(--mb-navy);
+  background: var(--mb-navy);
+  color: #fff;
+}
+
+/* ----------------------------------------------------------------
+   Nav
+   ---------------------------------------------------------------- */
+.nav-link { position: relative; }
+.nav-link.active { color: #fff; }
+.nav-link.active::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: var(--mb-blue);
+}
+
+/* ----------------------------------------------------------------
+   Learn more chevron rotation
+   ---------------------------------------------------------------- */
+.chevron { transition: transform .2s ease; }
+.chevron.open { transform: rotate(180deg); }
+
+::selection { background: var(--mb-blue); color: #fff; }
